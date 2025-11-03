@@ -59,6 +59,7 @@ Navigate to Project Directory
 ```bash
 cd Securing-Healthcare-with-Deep-Learning-A-CNN-Based-Model-for-medical-IoT-Threat-Detection
 ```
+then:
 ```bash
 pip install -r requirements.txt
 ```
@@ -150,6 +151,7 @@ The open-access PDF version of the paper is available on arXiv. You can read the
 Made with ❤️ by Alireza Mohamadi
 
 </div>
+
 
 
 
