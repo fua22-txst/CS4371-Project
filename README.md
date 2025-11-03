@@ -55,6 +55,10 @@ git clone https://github.com/alirezamohamadiam/Securing-Healthcare-with-Deep-Lea
 ```
 
 ### Step 2: Install Requirements
+Navigate to Project Directory
+```bash
+cd Securing-Healthcare-with-Deep-Learning-A-CNN-Based-Model-for-medical-IoT-Threat-Detection
+```
 ```bash
 pip install -r requirements.txt
 ```
@@ -146,6 +150,7 @@ The open-access PDF version of the paper is available on arXiv. You can read the
 Made with ❤️ by Alireza Mohamadi
 
 </div>
+
 
 
 
