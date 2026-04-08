@@ -71,6 +71,11 @@ ATTACK_CATEGORIES_2 = {
     'Benign': 'Benign'
 }
 
+ATTACK_CATEGORIES_SPOOF = {  
+    'ARP_Spoofing': 'attack',
+    'Benign': 'Benign'
+}
+
 def get_attack_category(file_name, class_config): 
     """Get attack category from file name."""
 
@@ -78,8 +83,10 @@ def get_attack_category(file_name, class_config):
         categories = ATTACK_CATEGORIES_2
     elif class_config == 6:
         categories = ATTACK_CATEGORIES_6
-    else:  # Default to 19 classes 
-        categories = ATTACK_CATEGORIES_19  
+    elif class_config == 19:
+        categories = ATTACK_CATEGORIES_19
+    else:  # Default to SPOOFING one 
+        categories = ATTACK_CATEGORIES_SPOOF  
 
     for key in categories:
         if key in file_name:
