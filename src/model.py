@@ -11,9 +11,9 @@ def create_cnn_model(input_shape, num_classes):
     model.add(MaxPooling1D(pool_size=2))
     model.add(Flatten())
     model.add(Dense(128, activation='relu'))
-    model.add(Dense(num_classes, activation='softmax')) 
+    model.add(Dense(num_classes, activation='sigmoid')) 
 
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
 def train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=10, batch_size=32):
