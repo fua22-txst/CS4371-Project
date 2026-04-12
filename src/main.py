@@ -1,10 +1,8 @@
 import os
 import argparse
-import numpy as np
 from data_loader import load_and_preprocess_data
 from model import create_cnn_model, train_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
-from sklearn.utils.class_weight import compute_class_weight
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train and evaluate a CNN for network intrusion detection.")
@@ -30,9 +28,7 @@ if __name__ == "__main__":
     else:
         print('GPU is not available. Using CPU.')
 
-    y_train_indices = y_train_categorical.argmax(axis=1)
-    class_weights = compute_class_weight('balanced', classes=np.unique(y_train_indices), y=y_train_indices)
-    class_weight_dict = dict(enumerate(class_weights))
+    class_weight_dict = {0: 1.0, 1: 5.0}
 
     model = train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, class_weight=class_weight_dict)
 

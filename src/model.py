@@ -16,7 +16,7 @@ def create_cnn_model(input_shape, num_classes):
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
-def train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=10, batch_size=32, class_weight=None):
+def train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=15, batch_size=32, class_weight=None):
     """Train the CNN model."""
     model.fit(X_train, y_train_categorical, epochs=epochs, batch_size=batch_size,
               validation_data=(X_val, y_val_categorical), class_weight=class_weight)
