@@ -88,20 +88,22 @@ def get_attack_category(file_name, class_config):
     else:  # Default to SPOOFING one 
         categories = ATTACK_CATEGORIES_SPOOF  
 
+    if 'ARP-Spoof' in file_name:
+        return categories.get('ARP_Spoofing', 'attack')
+
     for key in categories:
         if key in file_name:
             return categories[key]
         
 def load_and_preprocess_data(data_dir, class_config):
     """Load, preprocess, and prepare data for training."""
-    # !!! TODO: PLEASE CHANGE THIS SECTION TO ONLY GRAB THE SPOOFING AND BENIGN FILES FOR THE TRAIN AND TEST DATA
-    train_files = [f"{data_dir}/train/{f}" for f in os.listdir(f"{data_dir}/train") if f.endswith('.csv')]
-    test_files = [f"{data_dir}/test/{f}" for f in os.listdir(f"{data_dir}/test") if f.endswith('.csv')]
+    train_files = [f"{data_dir}/train/{f}" for f in os.listdir(f"{data_dir}/train")
+                   if f.endswith('.csv') and ('ARP_Spoofing' in f or 'ARP-Spoof' in f or 'Benign' in f)]
+    test_files = [f"{data_dir}/test/{f}" for f in os.listdir(f"{data_dir}/test")
+                  if f.endswith('.csv') and ('ARP_Spoofing' in f or 'ARP-Spoof' in f or 'Benign' in f)]
 
     train_df = pd.concat([pd.read_csv(f).assign(file=f) for f in train_files], ignore_index=True)
     test_df = pd.concat([pd.read_csv(f).assign(file=f) for f in test_files], ignore_index=True)
-
-    # !!! 
 
     train_df['Attack_Type'] = train_df['file'].apply(lambda x: get_attack_category(x, class_config))
     test_df['Attack_Type'] = test_df['file'].apply(lambda x: get_attack_category(x, class_config))

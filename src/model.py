@@ -11,13 +11,13 @@ def create_cnn_model(input_shape, num_classes):
     model.add(MaxPooling1D(pool_size=2))
     model.add(Flatten())
     model.add(Dense(128, activation='relu'))
-    model.add(Dense(num_classes, activation='sigmoid')) 
+    model.add(Dense(num_classes, activation='softmax'))
 
-    model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
-def train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=10, batch_size=32):
+def train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=10, batch_size=32, class_weight=None):
     """Train the CNN model."""
-    model.fit(X_train, y_train_categorical, epochs=epochs, batch_size=batch_size, 
-              validation_data=(X_val, y_val_categorical))
+    model.fit(X_train, y_train_categorical, epochs=epochs, batch_size=batch_size,
+              validation_data=(X_val, y_val_categorical), class_weight=class_weight)
     return model
