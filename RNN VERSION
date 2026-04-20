@@ -1,0 +1,31 @@
+import argparse
+from data_loader import load_and_preprocess_data
+from model import build_model, run_training
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--class_config', type=int, choices=[2, 6, 19], default=2)
+args = parser.parse_args()
+
+data_path = "../data"
+
+X_train, X_val, X_test, y_train_categorical, y_val_categorical, y_test_categorical, label_encoder = load_and_preprocess_data(
+    data_path,
+    args.class_config
+)
+
+input_shape = (X_train.shape[1], X_train.shape[2])
+num_classes = y_train_categorical.shape[1]
+
+model = build_model(input_shape, num_classes)
+
+model = run_training(
+    model,
+    X_train,
+    y_train_categorical,
+    X_val,
+    y_val_categorical
+)
+
+loss, accuracy = model.evaluate(X_test, y_test_categorical)
+print("Test Loss:", loss)
+print("Test Accuracy:", accuracy)
