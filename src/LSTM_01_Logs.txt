@@ -1,0 +1,274 @@
+
+(base) C:\Users\boboh>conda activate CS4371
+
+(CS4371) C:\Users\boboh>E:
+
+(CS4371) E:\>cd E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python main.py --class_config 19
+2026-04-11 23:50:14.611604: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-11 23:51:38.509510: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2026-04-11 23:52:15.652963: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+GPU is available!
+Callbacks set up. Starting training...
+Traceback (most recent call last):
+  File "E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src\main.py", line 45, in <module>
+    model = tf.keras.models.load_model('model_epoch_03.keras')
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\_hl\files.py", line 564, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\_hl\files.py", line 238, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 102, in h5py.h5f.open
+OSError: Unable to synchronously open file (file signature not found)
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>ls
+'Attempt 1 logs.txt'   data_loader.py   model.py               model_epoch_02.keras
+ __pycache__           main.py          model_epoch_01.keras   model_epoch_03.keras
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python quickcheck.py
+size: 241764
+zipfile? True
+head: b'PK\x03\x04\x14\x00\x00\x00'
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python listarch.py
+['metadata.json', 'config.json', 'model.weights.h5']
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>conda install h5py
+Channels:
+ - defaults
+ - conda-forge
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: D:\ProgramData\anaconda3\envs\CS4371
+
+  added / updated specs:
+    - h5py
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    h5py-3.14.0                |   py39h6fc9867_0         1.1 MB
+    hdf5-1.14.5                |       ha36df97_2         2.1 MB
+    m2w64-gcc-libgfortran-5.3.0|                6         340 KB
+    m2w64-gcc-libs-5.3.0       |                7         518 KB
+    m2w64-gcc-libs-core-5.3.0  |                7         213 KB
+    m2w64-gmp-6.1.0            |                2         689 KB
+    m2w64-libwinpthread-git-5.0.0.4634.697f757|                2          30 KB
+    mpi-1.0                    |            msmpi           7 KB
+    mpi4py-4.0.3               |   py39h827c3e9_0         835 KB
+    msmpi-10.1.1               |       had4844c_0         4.0 MB
+    msys2-conda-epoch-20160418 |                1           2 KB
+    ------------------------------------------------------------
+                                           Total:         9.9 MB
+
+The following NEW packages will be INSTALLED:
+
+  h5py               pkgs/main/win-64::h5py-3.14.0-py39h6fc9867_0
+  hdf5               pkgs/main/win-64::hdf5-1.14.5-ha36df97_2
+  m2w64-gcc-libgfor~ pkgs/msys2/win-64::m2w64-gcc-libgfortran-5.3.0-6
+  m2w64-gcc-libs     pkgs/msys2/win-64::m2w64-gcc-libs-5.3.0-7
+  m2w64-gcc-libs-co~ pkgs/msys2/win-64::m2w64-gcc-libs-core-5.3.0-7
+  m2w64-gmp          pkgs/msys2/win-64::m2w64-gmp-6.1.0-2
+  m2w64-libwinpthre~ pkgs/msys2/win-64::m2w64-libwinpthread-git-5.0.0.4634.697f757-2
+  mpi                pkgs/main/win-64::mpi-1.0-msmpi
+  mpi4py             pkgs/main/win-64::mpi4py-4.0.3-py39h827c3e9_0
+  msmpi              pkgs/main/win-64::msmpi-10.1.1-had4844c_0
+  msys2-conda-epoch  pkgs/msys2/win-64::msys2-conda-epoch-20160418-1
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+"You seem to have a system wide installation of MSMPI. "
+"Due to the way DLL loading works on windows, system wide installation "
+"will probably overshadow the conda installation. Uninstalling "
+"the system wide installation and forced deleting C:\Windows\System32\msmpi*.dll"
+"will help, but may break other software using the system wide installation."
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python main.py --class_config 19
+D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\__init__.py:36: UserWarning: h5py is running against HDF5 1.14.6 when it was built against 1.14.5, this may cause problems
+  _warn(("h5py is running against HDF5 {0} when it was built against {1}, "
+2026-04-12 02:22:23.101452: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-12 02:22:32.444276: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2026-04-12 02:22:37.735862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+GPU is available!
+Traceback (most recent call last):
+  File "E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src\main.py", line 34, in <module>
+    model.load_weights("model_epoch_03.weights.h5")
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\_hl\files.py", line 564, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\_hl\files.py", line 238, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+  File "h5py\\_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'model_epoch_03.weights.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python main.py --class_config 19
+D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\__init__.py:36: UserWarning: h5py is running against HDF5 1.14.6 when it was built against 1.14.5, this may cause problems
+  _warn(("h5py is running against HDF5 {0} when it was built against {1}, "
+2026-04-12 02:26:18.493866: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-12 02:26:27.784565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2026-04-12 02:26:32.587979: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+GPU is available!
+Callbacks set up. Starting training...
+2026-04-12 02:26:33.730508: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 1012595040 exceeds 10% of free system memory.
+Epoch 4/10
+2026-04-12 02:26:47.938768: I tensorflow/stream_executor/cuda/cuda_dnn.cc:384] Loaded cuDNN version 8100
+forrtl: error (200): program aborting due to control-C event
+Image              PC                Routine            Line        Source
+libifcoremd.dll    00007FFF66E5DF54  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFFDD5FC203  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFFDF2A7374  Unknown               Unknown  Unknown
+ntdll.dll          00007FFFDFD9CC91  Unknown               Unknown  Unknown
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>python main.py --class_config 19
+D:\ProgramData\anaconda3\envs\CS4371\lib\site-packages\h5py\__init__.py:36: UserWarning: h5py is running against HDF5 1.14.6 when it was built against 1.14.5, this may cause problems
+  _warn(("h5py is running against HDF5 {0} when it was built against {1}, "
+2026-04-12 02:29:42.277250: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-04-12 02:29:51.306485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+2026-04-12 02:29:55.957962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1616] Created device /device:GPU:0 with 3966 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1660 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+GPU is available!
+Callbacks set up. Starting training...
+2026-04-12 02:29:57.002502: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 1012595040 exceeds 10% of free system memory.
+Epoch 1/10
+2026-04-12 02:30:10.310310: I tensorflow/stream_executor/cuda/cuda_dnn.cc:384] Loaded cuDNN version 8100
+175798/175798 [==============================] - ETA: 0s - loss: 0.4857 - accuracy: 0.7812
+Epoch 1: saving model to model_epoch_01.h5
+175798/175798 [==============================] - 1927s 11ms/step - loss: 0.4857 - accuracy: 0.7812 - val_loss: nan - val_accuracy: 0.7941
+Epoch 2/10
+175797/175798 [============================>.] - ETA: 0s - loss: 0.4472 - accuracy: 0.7953
+Epoch 2: saving model to model_epoch_02.h5
+175798/175798 [==============================] - 1899s 11ms/step - loss: 0.4472 - accuracy: 0.7953 - val_loss: nan - val_accuracy: 0.7960
+Epoch 3/10
+175794/175798 [============================>.] - ETA: 0s - loss: 0.3834 - accuracy: 0.8263
+Epoch 3: saving model to model_epoch_03.h5
+175798/175798 [==============================] - 2102s 12ms/step - loss: 0.3834 - accuracy: 0.8263 - val_loss: nan - val_accuracy: 0.7952
+Epoch 4/10
+175793/175798 [============================>.] - ETA: 0s - loss: 0.3715 - accuracy: 0.8336
+Epoch 4: saving model to model_epoch_04.h5
+175798/175798 [==============================] - 2174s 12ms/step - loss: 0.3715 - accuracy: 0.8336 - val_loss: nan - val_accuracy: 0.8441
+Epoch 5/10
+175795/175798 [============================>.] - ETA: 0s - loss: 0.3707 - accuracy: 0.8337
+Epoch 5: saving model to model_epoch_05.h5
+175798/175798 [==============================] - 2171s 12ms/step - loss: 0.3707 - accuracy: 0.8337 - val_loss: nan - val_accuracy: 0.8503
+Epoch 6/10
+175794/175798 [============================>.] - ETA: 0s - loss: 0.3408 - accuracy: 0.8463
+Epoch 6: saving model to model_epoch_06.h5
+175798/175798 [==============================] - 2200s 13ms/step - loss: 0.3408 - accuracy: 0.8463 - val_loss: nan - val_accuracy: 0.8512
+Epoch 7/10
+175797/175798 [============================>.] - ETA: 0s - loss: 0.3227 - accuracy: 0.8550
+Epoch 7: saving model to model_epoch_07.h5
+175798/175798 [==============================] - 2198s 13ms/step - loss: 0.3227 - accuracy: 0.8550 - val_loss: nan - val_accuracy: 0.8907
+Epoch 8/10
+175795/175798 [============================>.] - ETA: 0s - loss: 0.2272 - accuracy: 0.9035
+Epoch 8: saving model to model_epoch_08.h5
+175798/175798 [==============================] - 2172s 12ms/step - loss: 0.2272 - accuracy: 0.9035 - val_loss: nan - val_accuracy: 0.9029
+Epoch 9/10
+175796/175798 [============================>.] - ETA: 0s - loss: 0.1718 - accuracy: 0.9296
+Epoch 9: saving model to model_epoch_09.h5
+175798/175798 [==============================] - 2119s 12ms/step - loss: 0.1718 - accuracy: 0.9296 - val_loss: nan - val_accuracy: 0.9809
+Epoch 10/10
+175794/175798 [============================>.] - ETA: 0s - loss: 0.0516 - accuracy: 0.9815
+Epoch 10: saving model to model_epoch_10.h5
+175798/175798 [==============================] - 2073s 12ms/step - loss: 0.0516 - accuracy: 0.9815 - val_loss: nan - val_accuracy: 0.9883
+50444/50444 [==============================] - 303s 6ms/step - loss: 0.0830 - accuracy: 0.9845
+Test Loss: 0.0830
+Test Accuracy: 0.9845
+50444/50444 [==============================] - 240s 5ms/step
+Accuracy: 0.9844528064369445
+Precision: 0.984276083898754
+Recall: 0.9844528064369445
+F1-Score: 0.9820665829144405
+
+Classification Report:
+                          precision    recall  f1-score   support
+
+                 Benign       0.92      0.94      0.93     37607
+              DDoS-ICMP       0.99      1.00      1.00    349699
+               DDoS-SYN       1.00      0.99      0.99    172397
+               DDoS-TCP       0.99      1.00      1.00    182598
+               DDoS-UDP       1.00      1.00      1.00    362070
+               DoS-ICMP       1.00      0.98      0.99     98432
+                DoS-SYN       0.99      0.99      0.99     98595
+                DoS-TCP       1.00      0.99      0.99     82096
+                DoS-UDP       0.99      0.99      0.99    137553
+MQTT-DDoS-Connect_Flood       0.99      1.00      1.00     41916
+MQTT-DDoS-Publish_Flood       0.87      0.11      0.20      8416
+ MQTT-DoS-Connect_Flood       0.99      0.90      0.94      3131
+ MQTT-DoS-Publish_Flood       0.53      1.00      0.69      8505
+    MQTT-Malformed_Data       0.95      0.45      0.61      1747
+          Recon-OS_Scan       0.18      0.00      0.01      3834
+       Recon-Ping_Sweep       0.88      0.53      0.66       186
+        Recon-Port_Scan       0.82      0.96      0.89     22622
+          Recon-VulScan       0.02      0.00      0.01      1034
+               Spoofing       0.44      0.53      0.48      1744
+
+               accuracy                           0.98   1614182
+              macro avg       0.82      0.76      0.76   1614182
+           weighted avg       0.98      0.98      0.98   1614182
+
+
+Confusion Matrix:
+ [[ 35407      1      0      0      0      0      0      0    177      1
+       0      0      0     12     16     12   1135      2    844]
+ [     3 349260      0      9     58    319     11      2     16      0
+       5      4     12      0      0      0      0      0      0]
+ [     7     18 171149    145     75     24    710     16     75     22
+     102     11     32      0      0      0     11      0      0]
+ [     5      5      0 182305     33     11      3    164     22      3
+       3      9     35      0      0      0      0      0      0]
+ [     1     18      5     37 361023     37     30      9    900      1
+       2      2      5      0      0      0      0      0      0]
+ [     1   1768      0     14      0  96488      3     24     98      3
+       1      1     31      0      0      0      0      0      0]
+ [     0      0    778     37      0      0  97742      0      0     13
+       2      0      1      0      0      0     22      0      0]
+ [     0     19      0    831      0      1      0  81241      2      0
+       0      0      2      0      0      0      0      0      0]
+ [     1      4      1      9    873      4      1      3 136653      0
+       0      1      3      0      0      0      0      0      0]
+ [     1      0      0      1      0      0      7      0      0  41900
+       2      2      0      2      1      0      0      0      0]
+ [     2      0      1      7      0      1      1      2      2      4
+     956      0   7439      0      0      0      0      0      1]
+ [     0      0      1      1      0      0      1      0      0    287
+      23   2818      0      0      0      0      0      0      0]
+ [     2      0      0      4      0      0      1      1      0      0
+       2      0   8495      0      0      0      0      0      0]
+ [   897      0      0      0      0      0      0      0      0      1
+       0      0      0    787      9      2      5      0     46]
+ [   688      0      0      0      0      0      0      0      0      0
+       0      0      0      2     17      0   3122      2      3]
+ [    86      0      0      0      0      0      0      0      0      0
+       0      1      0      0      0     99      0      0      0]
+ [   396      0      0      0      0      1      0      0      0      0
+       0      0      0      0     14      0  21816    113    282]
+ [   538      0      0      1      0      0      0      0      0      0
+       0      0      0     26     37      0    424      5      3]
+ [   614      0      0      0      0      0      0      0      1      0
+       0      0      0      3      2      0     74    125    925]]
+
+(CS4371) E:\TEMPORARY DOWNLOADING\CS4371\CS4371-Project\src>
