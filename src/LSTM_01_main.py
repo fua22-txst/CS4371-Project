@@ -22,6 +22,7 @@ if __name__ == "__main__":
     input_shape = (X_train.shape[1], 1) 
     model = create_lstm_model(input_shape, y_train_categorical.shape[1])
 
+    # Check if GPU is enabled
     import tensorflow as tf 
     if tf.test.gpu_device_name():
         print('GPU is available!')
@@ -30,7 +31,7 @@ if __name__ == "__main__":
 
 
 
-    # Resume from full-model HDF5 checkpoint (epoch 3)
+    # Uncomment this to resume from full-model HDF5 checkpoint (in this case, epoch 3/10)
     # model = tf.keras.models.load_model('model_epoch_03.h5')
 
 
@@ -50,10 +51,12 @@ if __name__ == "__main__":
 
     model = train_model(model, X_train, y_train_categorical, X_val, y_val_categorical, epochs=10, checkpoint_callback=checkpoint_callback)
 
+    # Evaluate the loss and accuracy
     loss, accuracy = model.evaluate(X_test, y_test_categorical)
     print(f"Test Loss: {loss:.4f}")
     print(f"Test Accuracy: {accuracy:.4f}")
 
+    # Calculate and print the other, more detailed metrics
     y_pred_categorical = model.predict(X_test)
     y_pred_encoded = y_pred_categorical.argmax(axis=1)
     y_pred = label_encoder.inverse_transform(y_pred_encoded)
