@@ -9,6 +9,7 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
 from data_loader import load_and_preprocess_data
 from model import create_cnn_model, train_model
 
+# Fix all random seeds for reproducibility across runs.
 SEED = 42
 os.environ['PYTHONHASHSEED'] = str(SEED)
 random.seed(SEED)
@@ -19,6 +20,7 @@ tf.random.set_seed(SEED)
 CLASS_WEIGHT = {0: 1.0, 1: 5.0}
 
 
+# Prints accuracy, precision, recall, F1, classification report, and confusion matrix for a model.
 def evaluate(name, y_true, y_pred):
     print(f"\n{'='*55}")
     print(f"  {name}")
@@ -59,6 +61,7 @@ if __name__ == "__main__":
     results = {}
 
     # ── CNN ──────────────────────────────────────────────────────────────────
+    # Build and train the CNN using the same architecture and class weights as main.py.
     print("\nTraining CNN...")
     cnn = create_cnn_model(input_shape=(X_train.shape[1], 1), num_classes=y_train_cat.shape[1])
     cnn = train_model(cnn, X_train, y_train_cat, X_val, y_val_cat,
@@ -68,6 +71,7 @@ if __name__ == "__main__":
     )
 
     # ── Random Forest ─────────────────────────────────────────────────────────
+    # Train a 100-tree random forest on flattened features with class weighting.
     print("\nTraining Random Forest...")
     rf = RandomForestClassifier(
         n_estimators=100,
@@ -79,6 +83,7 @@ if __name__ == "__main__":
     results['Random Forest'] = label_encoder.inverse_transform(rf.predict(X_test_flat))
 
     # ── Gradient Boosting ─────────────────────────────────────────────────────
+    # Train a 100-estimator gradient boosting classifier using per-sample weights.
     # GradientBoostingClassifier doesn't accept class_weight; use sample_weight instead
     print("\nTraining Gradient Boosting...")
     gb = GradientBoostingClassifier(n_estimators=100, random_state=SEED)
@@ -86,6 +91,7 @@ if __name__ == "__main__":
     results['Gradient Boosting'] = label_encoder.inverse_transform(gb.predict(X_test_flat))
 
     # ── Summary table ─────────────────────────────────────────────────────────
+    # Print a side-by-side comparison of all three models' key metrics.
     print("\n\n" + "=" * 65)
     print("MODEL COMPARISON SUMMARY")
     print("=" * 65)
