@@ -105,10 +105,10 @@ def load_and_preprocess_spoofing(data_dir, class_config):
     train_df = pd.concat([pd.read_csv(f).assign(file=f) for f in train_files], ignore_index=True)
     test_df = pd.concat([pd.read_csv(f).assign(file=f) for f in test_files], ignore_index=True)
 
-    train_df = train_df.groupby('Attack_Type', group_keys=False).apply(lambda x: x.head(75))
-
     train_df['Attack_Type'] = train_df['file'].apply(lambda x: get_attack_category(x, class_config))
     test_df['Attack_Type'] = test_df['file'].apply(lambda x: get_attack_category(x, class_config))
+
+    train_df = train_df.groupby('Attack_Type', group_keys=False).apply(lambda x: x.head(75))
 
     X_train = train_df.drop(['Attack_Type', 'file'], axis=1)
     y_train = train_df['Attack_Type']
