@@ -1,7 +1,7 @@
 import os
 import argparse
-from data_loader import load_and_preprocess_data
-from model import create_lstm_model, train_model
+from LSTM_01_data_loader import load_and_preprocess_data
+from LSTM_01_model import create_lstm_model, train_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
 
 if __name__ == "__main__":
