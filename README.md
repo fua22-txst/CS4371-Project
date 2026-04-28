@@ -5,9 +5,9 @@ by Cade, Miguel, Nikolas, Lucian
 The README file in the GitHub repository indicates clearly how to easily clone and build/deploy the code. The README file in the GitHub repository clearly indicates what functionality does (and does not, if applicable) work in the final version of the application. Additionally, it should include references to two scholarly papers: one representing prior research, serving as the foundational bedrock for the current study, and another representing contemporary work that acknowledges and builds upon the findings of the current paper. This practice is akin to the methodology of an archeologist, meticulously documenting the lineage of ideas and advancements within the academic landscape.
 
 __Overview__
-
 This project uses four different models to detect network intrusions. The goal was to fiddle with the idea of improving overall detection by having a different model to cover the weaknesses of the CNN. 
-Functionality
+
+__Functionality__:
 Along with the original CNN, our code trains 3 additional ML models on the entire provided dataset to test if we can improve the results from the original CNN. We also did an additional set of training to cover up the weaknesses of the original model, training 3 models on Benign and Spoofing attacks only to see if we could get better results in these areas. Our code also prints the results and metrics of the models to compare to the original.
 
 
@@ -23,18 +23,18 @@ __How to Get Started With Our Code__
 4. Download the dataset (https://txst-my.sharepoint.com/:u:/g/personal/fua22_txstate_edu/IQDizzZi_Ja0TJS4jCuf0pxaAd7t2m7IMHPT3AX55RZUEDA?e=hcYpuS) and put the files in the correct places:
   a. Extract and place the CSV files in the appropriate directories (‘data/train/’ and ‘data/test/’) 
   b. Within the ‘data/’ directory, there should be ‘train/’ and ‘test/’ folders to hold the CSV files for training and testing. Move the files from the data set to each of these
-5. Switch branches with ‘git checkout branch-name’ to try different member codes. For the second-CNN branch, just switch to it, and type:                      ‘python compare_models.py’ to run the code.
+5. Make sure you are in the src directory, then run “python main.py”, and our code should execute
 
 
 
+Prior research paper(cited in our paper): https://ieeexplore.ieee.org/document/11455983
+  This paper is referenced by ours and was influential because it showed how to use machine learning models trained on IoMT data to perform binary and multi level attack classification. Our paper used a CNN trained on IoMT data following some of the ideas presented in this paper. 
 
 
+Post paper research(cites our paper): https://www.sciencedirect.com/science/article/pii/S2542660525001453
+  This paper references our paper, and is basically doing a study comparing the effectiveness of ML models for cybersecurity in healthcare, when they are trained on IoT datasets vs when they are trained on IoMT datasets. They use the same IoMT dataset that the researchers in our paper used, and reference the results    of our papers researchers.
 
-Prior research paper: https://www.mdpi.com/2624-800X/2/3/33
-Post paper research: https://www.mdpi.com/2227-7390/13/10/1574
-
-
-
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 # ORIGINAL PAPER'S README (kept for reference)
 # Securing Healthcare with Deep Learning: A CNN-Based Model for medical IoT Threat Detection
