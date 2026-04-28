@@ -2,6 +2,9 @@ import os
 import argparse
 from data_loader import load_and_preprocess_data
 from compare_models import run_comparison
+from tweakedCNN_main import run_tweakedCNN
+#from RNN_main import run_RNN
+from LSTM_01_main import run_LSTM
 from model import create_cnn_model, train_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
 
@@ -53,5 +56,19 @@ if __name__ == "__main__":
     print("\nClassification Report:\n", classification_report(y_test_decoded, y_pred))
     print("\nConfusion Matrix:\n", confusion_matrix(y_test_decoded, y_pred))
 
+    # Run Lucian's LSTM
+    run_LSTM()
+    print("===============================================================")    
+
+    # Run Miguel's RNN
+    runRNN()
+    print("===============================================================")    
+
+
+    # Run Nik's tweaked CNN
+    run_tweakedCNN()
+    print("===============================================================")    
+
+    # Run Cade's (second layer CNN)
     run_comparison()
 

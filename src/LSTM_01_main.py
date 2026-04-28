@@ -4,7 +4,7 @@ from LSTM_01_data_loader import load_and_preprocess_data
 from LSTM_01_model import create_lstm_model, train_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
 
-if __name__ == "__main__":
+def run_LSTM():
     parser = argparse.ArgumentParser(description="Train and evaluate an LSTM for network intrusion detection.")
     parser.add_argument("--class_config", type=int, choices=[2, 6, 19], default=19,
                         help="Number of classes for classification (2, 6, or 19)")
@@ -74,3 +74,8 @@ if __name__ == "__main__":
     print("F1-Score:", f1)
     print("\nClassification Report:\n", classification_report(y_test_decoded, y_pred))
     print("\nConfusion Matrix:\n", confusion_matrix(y_test_decoded, y_pred))
+
+
+
+if __name__ == "__main__":
+    run_LSTM()
