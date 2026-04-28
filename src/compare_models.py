@@ -33,7 +33,7 @@ def evaluate(name, y_true, y_pred):
     print(f"Confusion Matrix:\n{confusion_matrix(y_true, y_pred)}")
 
 
-if __name__ == "__main__":
+def run_comparison():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(script_dir, '..', 'data')
 
@@ -107,3 +107,6 @@ if __name__ == "__main__":
     # ── Detailed per-model reports ────────────────────────────────────────────
     for name, y_pred in results.items():
         evaluate(name, y_test_decoded, y_pred)
+
+if __name__ == "__main__":
+    run_comparison()
