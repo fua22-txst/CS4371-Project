@@ -26,6 +26,8 @@ __How to Get Started With Our Code__
 5. Make sure you are in the src directory, then run “python main.py”, and our code should execute
 
 
+Note: The dataset SAMPLE_SIZE is hardcoded to 100 items from the dataset for the sake of the demo (75 items for the second CNN/Gradient Boost/Random Forest). This value is located in `*_data_loader.py` for the corresponding model. To run the models on larger training datasets, change this value for each model's `*_data_loader.py`. For the second layer CNN, comment out line 111 in `data_loader_spoofing.py` to run it on the full dataset.
+
 
 Prior research paper(cited in our paper): https://ieeexplore.ieee.org/document/11455983
   This paper is referenced by ours and was influential because it showed how to use machine learning models trained on IoMT data to perform binary and multi level attack classification. Our paper used a CNN trained on IoMT data following some of the ideas presented in this paper. 
