@@ -75,7 +75,7 @@ ATTACK_CATEGORIES_2 = {
 def get_attack_category(file_name, class_config): 
     """Get attack category from file name."""
 
-    # Default to 19 classes 
+
     categories = ATTACK_CATEGORIES_19  
 
     for key in categories:

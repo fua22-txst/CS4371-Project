@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train and evaluate an LSTM for network intrusion detection.")
-    parser.add_argument("--class_config", type=int, choices=[2, 6, 19], default=2,
+    parser.add_argument("--class_config", type=int, choices=[2, 6, 19], default=19,
                         help="Number of classes for classification (2, 6, or 19)")
     args = parser.parse_args()
 

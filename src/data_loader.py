@@ -90,8 +90,10 @@ def load_and_preprocess_data(data_dir, class_config):
     train_files = [f"{data_dir}/train/{f}" for f in os.listdir(f"{data_dir}/train") if f.endswith('.csv')]
     test_files = [f"{data_dir}/test/{f}" for f in os.listdir(f"{data_dir}/test") if f.endswith('.csv')]
 
-    train_df = pd.concat([pd.read_csv(f).assign(file=f) for f in train_files], ignore_index=True)
-    test_df = pd.concat([pd.read_csv(f).assign(file=f) for f in test_files], ignore_index=True)
+    SAMPLE_SIZE = 100
+
+    train_df = pd.concat([pd.read_csv(f, nrows=SAMPLE_SIZE).assign(file=f) for f in train_files], ignore_index=True)
+    test_df = pd.concat([pd.read_csv(f, nrows=SAMPLE_SIZE).assign(file=f) for f in test_files], ignore_index=True)
 
     train_df['Attack_Type'] = train_df['file'].apply(lambda x: get_attack_category(x, class_config))
     test_df['Attack_Type'] = test_df['file'].apply(lambda x: get_attack_category(x, class_config))
