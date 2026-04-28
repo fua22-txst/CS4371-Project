@@ -8,7 +8,7 @@ __Overview__
 This project uses four different models to detect network intrusions. The goal was to fiddle with the idea of improving overall detection by having a different model to cover the weaknesses of the CNN. 
 
 __Functionality__:
-Along with the original CNN, our code trains 3 additional ML models on the entire provided dataset to test if we can improve the results from the original CNN. We also did an additional set of training to cover up the weaknesses of the original model, training 3 models on Benign and Spoofing attacks only to see if we could get better results in these areas. Our code also prints the results and metrics of the models to compare to the original.
+Along with the original CNN, our code trains 3 additional ML models on the entire provided dataset to test if we can improve the results from the original CNN. We also did an additional set of training to cover up the weaknesses of the original model, training 3 models on Benign and Spoofing attacks only to see if we could get better results in these areas. Our code also prints the results and metrics of the models to compare to the original. We also had to add several extra files upon merging all our our code together for it to function properly. But to run and see the results of our code, all you need to worry about is main.py.
 
 
 
