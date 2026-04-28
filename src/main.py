@@ -56,19 +56,32 @@ if __name__ == "__main__":
     print("\nClassification Report:\n", classification_report(y_test_decoded, y_pred))
     print("\nConfusion Matrix:\n", confusion_matrix(y_test_decoded, y_pred))
 
+    print()
+    print("Above: Default CNN")
+    print("===============================================================")   
+    
     # Run Lucian's LSTM
+    print()
+    print("Above: LSTM")
     run_LSTM()
     print("===============================================================")    
 
     # Run Miguel's RNN
+    print()
+    print("Above: RNN")
     run_RNN()
     print("===============================================================")    
 
 
     # Run Nik's tweaked CNN
+    print()
+    print("Above: Tweaked CNN")
     run_tweakedCNN()
     print("===============================================================")    
 
     # Run Cade's (second layer CNN)
     run_comparison()
+    print()
+    print("Above: Second Layer CNN, Gradient Boost, Random Forest")
+    print("===============================================================")
 
