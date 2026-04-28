@@ -7,7 +7,7 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
                              f1_score, classification_report, confusion_matrix)
 
 from data_loader_spoofing import load_and_preprocess_spoofing
-from model import create_cnn_model, train_model
+from model_spoofing import create_cnn_model, train_model
 
 # Fix all random seeds for reproducibility across runs.
 SEED = 42
