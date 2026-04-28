@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
 
     # Define unique filepath with epoch placeholder
-    checkpoint_path = "model_epoch_{epoch:02d}.h5"
+    checkpoint_path = "LSTM_model_epoch_{epoch:02d}.h5"
 
     # Create callback
     checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
