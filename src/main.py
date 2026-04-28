@@ -3,7 +3,7 @@ import argparse
 from data_loader import load_and_preprocess_data
 from compare_models import run_comparison
 from tweakedCNN_main import run_tweakedCNN
-#from RNN_main import run_RNN
+from RNN_main import run_RNN
 from LSTM_01_main import run_LSTM
 from model import create_cnn_model, train_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     print("===============================================================")    
 
     # Run Miguel's RNN
-    runRNN()
+    run_RNN()
     print("===============================================================")    
 
 
