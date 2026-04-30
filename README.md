@@ -39,7 +39,7 @@ Post paper research(cites our paper): https://www.sciencedirect.com/science/arti
 
 __Contributions:__
 
-- Cade: Second-layer CNN, Random Forest, & Gradient Boost models; researcher, README author
+- Cade: Second-layer CNN, Random Forest, & Gradient Boost models (most of this work is done in the "compare_models.py" file); researcher, README author
 - Miguel: RNN model, README author
 - Nikolas: Tweaked CNN model, presentation organizer
 - Lucian: LSTM model, merging code for the demo, finalizing the GitHub code
