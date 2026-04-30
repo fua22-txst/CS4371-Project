@@ -36,11 +36,14 @@ Prior research paper(cited in our paper): https://ieeexplore.ieee.org/document/1
 Post paper research(cites our paper): https://www.sciencedirect.com/science/article/pii/S2542660525001453
   This paper references our paper, and is basically doing a study comparing the effectiveness of ML models for cybersecurity in healthcare, when they are trained on IoT datasets vs when they are trained on IoMT datasets. They use the same IoMT dataset that the researchers in our paper used, and reference the results    of our papers researchers.
 
-Contributions:
-Cade: Second-layer CNN, Random Forest, & Gradient Boost models; researcher, README author
-Miguel: RNN model, README author
-Nikolas: Tweaked CNN model, presentation organizer
-Lucian: LSTM model, merging code for the demo, finalizing the GitHub code
+
+__Contributions:__
+
+- Cade: Second-layer CNN, Random Forest, & Gradient Boost models; researcher, README author
+- Miguel: RNN model, README author
+- Nikolas: Tweaked CNN model, presentation organizer
+- Lucian: LSTM model, merging code for the demo, finalizing the GitHub code
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
